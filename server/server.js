@@ -2,24 +2,19 @@
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-// const fileUpload = require('express-fileupload');
 
-
-// const  User  = require('../routes/user');
-// const  Product  = require('../routes/product');
-
-const { dbConnection } = require('../database/dbConnection');
 const { PlaceHolderRoute } = require('../routes/placeholder');
+const { UsersRoutes } = require('../routes/UsersRoute');
 
 
 class Server{
    
       constructor() {
           this.app = express();
-          this.conexionDb();
           
           this.paths = {
              api_placeholder: '/api/placeholder',
+             users:           '/api/users',
           }
 
           this.middlewares();
@@ -28,16 +23,16 @@ class Server{
           
       }
 
-      async conexionDb(){
-          await dbConnection();
-      }
-
+    
       middlewares() {
           this.app.use( cors() );
+          this.app.use(bodyParser.json())
+          this.app.use(bodyParser.urlencoded({ extended: true }));
       }
 
       routes(){
-        this.app.use(this.paths.api_placeholder,  PlaceHolderRoute);
+        this.app.use(this.paths.api_placeholder, PlaceHolderRoute);
+        this.app.use(this.paths.users, UsersRoutes);
       }
 
       listen(){

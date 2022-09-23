@@ -1,4 +1,3 @@
-const { Console } = require('console');
 const { response } = require('express');
 const fetch = require('node-fetch');
 
@@ -21,7 +20,7 @@ const PlaceHolderController = async( req, res = response ) => {
 
         res.status(200).json({
             ok: true,
-            msg: data_save,
+            msg: data,
             
         });
 
