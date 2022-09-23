@@ -21,8 +21,11 @@ this project use the orm sequelize
 you must run the command in console like admin npm install -g sequelize-cli
 
 config, contains config file, which tells CLI how to connect with database change your database name
+
 models, contains all models for your project
+
 migrations, contains all migration files
+
 seeders, contains all seed files
 
 for migrate the migration run the command
