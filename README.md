@@ -1,22 +1,49 @@
 # prueba_by_andres_f_meza
 
 
-se debe instalar como administrador npm install -g sequelize-cli
-localmente npm install --save-dev sequelize-cli
-npx sequelize-cli init
+## Requeriments
+
+after dowload the project  you need run 
+this project use git flow after download run command git flow init enter default options and run git checkout develop before coding
+
+next run the command
+
+### npm install 
+
+### or 
+### yarn install 
 
 
-config, contains config file, which tells CLI how to connect with database
+## Important
+
+this project use the orm sequelize
+
+you must run the command in console like admin npm install -g sequelize-cli
+
+config, contains config file, which tells CLI how to connect with database change your database name
 models, contains all models for your project
 migrations, contains all migration files
 seeders, contains all seed files
 
+for migrate the migration run the command
+
 npx sequelize-cli db:migrate
 
-npx sequelize-cli model:generate --name Users --attributes name:string
+rename the file .env-example to .env by default is ignore but in this case just rename the file the config is ok
+
+run node index.js
+
+for autamatize you can use nodemon found here (https://www.npmjs.com/package/nodemon)
+
+in this case this project is not installed
+
+you can found the frontend in (https://github.com/andresfmm/prueba_by_andres_f_meza_front)
+
+!!happy coding :)
 
 
-[INFO] Your Mailman password is: eJZJuL4kKFSm
-[INFO] Your ISPConfig admin password is: gEU9PjZfYxEzJTe
-[INFO] Your MySQL root password is: WADTNwSsRSgxW7upgzmA
+
+
+
+
 
